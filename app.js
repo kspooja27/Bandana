@@ -25,9 +25,10 @@ app.use(express.static(__dirname + "/public"));
 
 
 app.get('/', function (req, res) {
-    res.send(200);
+    res.render('landing-page');
 });
 
+app.use('/', require('./routes/root.route'));
 app.use('/user', require('./routes/musician.routes'));
 app.use('/posts', require('./routes/posts.routes'));
 

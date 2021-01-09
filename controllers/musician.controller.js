@@ -18,35 +18,52 @@ exports.register = (req, res) => {
                 error: err,
             });
         } else {
-            let instruments = [];
-            console.log(JSON.stringify(savedMusician))
-            req.body.instruments.split('*,').forEach((instrument) => {
-                let jsonInst = JSON.parse(instrument)
-                console.log(jsonInst);
-                instruments.push(jsonInst);
-            });
-            console.log(instruments);
+            if (req.body.instruments) {
+                let instruments = [];
+                console.log(JSON.stringify(savedMusician))
+                req.body.instruments.split('*,').forEach((instrument) => {
+                    let jsonInst = JSON.parse(instrument)
+                    console.log(jsonInst);
+                    instruments.push(jsonInst);
+                });
+                console.log(instruments);
 
-            savedMusician.instruments = instruments;
+                savedMusician.instruments = instruments;
 
-            savedMusician.save((err) => {
-                if (err) {
-                    console.log(err);
-                    res.status(500).json({
-                        code: 500,
-                        message: "Internal Server Error",
-                        error: err,
-                    });
-                } else {
-                    if(req.files) {
-
+                savedMusician.save((err) => {
+                    if (err) {
+                        console.log(err);
+                        res.status(500).json({
+                            code: 500,
+                            message: "Internal Server Error",
+                            error: err,
+                        });
                     }
+                })
+            }
+
+            if(req.files) {
+                let file = req.files.image;
+                let fileName = file.name;
+                let ext = fileName.slice((Math.max(0,fileName.lastIndexOf('.')) || Infinity) +1);
+                if(ext == "") ext = "." + ext;
+                else {
+                    ext = ".jpg";
+                }
+                let filePath = "uploads/users/" +savedMusician.id + ext;
+                file.mv('public/' + filePath, (err) => {
+                    if(err) Common.error500(err, res)
+                })
+
+                savedMusician.image = filePath;
+                savedMusician.save((err, savedImage) => {
                     res.status(200).json({
                         code: 200,
-                        message: "All OK, Data Successfully added to the database",
+                        message: "User saved successfully",
+                        user: savedImage,
                     });
-                }
-            })
+                })
+            }
 
         }
     });

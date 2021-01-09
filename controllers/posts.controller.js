@@ -81,7 +81,6 @@ exports.fetchAll = (req, res) => {
 }
 
 exports.fileTest = (req, res) => {
-    let dummy = 'dummy';
     let file = req.files.image;
     let fileName = file.name;
     let ext = fileName.slice((Math.max(0, fileName.lastIndexOf('.')) || Infinity) + 1);

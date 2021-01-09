@@ -2,7 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6ff68a7b-fda8-4cb9-92fb-f1903013ce1a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/css/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/hero-bg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routes/root.route.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/landing-page.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/partials/footer.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/partials/header.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/register.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/musician.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/musician.controller.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/posts.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/posts.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/musician.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/musician.model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/.empty" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/root.controller.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,7 +32,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1fjn6G8EHtzAh9OosDtBGm9K1zF" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -30,10 +44,15 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/img" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Projects\node\express-starter\public\img" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
   <component name="SvnConfiguration">
@@ -50,14 +69,31 @@
       <workItem from="1608619754297" duration="1624000" />
       <workItem from="1608707585086" duration="98000" />
       <workItem from="1608707737291" duration="27579000" />
-      <workItem from="1609312252999" duration="3637000" />
+      <workItem from="1609312252999" duration="6716000" />
+      <workItem from="1610171625820" duration="11176000" />
     </task>
+    <task id="LOCAL-00001" summary="Added fileupload">
+      <created>1609315931794</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1609315931794</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added fileupload" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added fileupload" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="393" y="0" key="CommitChangelistDialog2" timestamp="1609315930660">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="393" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1609315930660" />
     <state width="1515" height="210" key="GridCell.Tab.0.bottom" timestamp="1608707683494">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -78,5 +114,13 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1608707674699" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1609315951271">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1609315951271" />
+    <state x="425" y="187" key="run.anything.popup" timestamp="1610191554788">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1610191554788" />
   </component>
 </project>

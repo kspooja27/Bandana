@@ -9,6 +9,7 @@ const musicianSchema = new mongoose.Schema({
     name: String,
     phone: Number,
     email: String,
+    image: String,
     gender: {type: String, enum: ['Male', 'Female', 'Other']},
     instruments: [instrumentSchema],
     password: String,
