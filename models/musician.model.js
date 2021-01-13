@@ -7,8 +7,8 @@ const instrumentSchema = new mongoose.Schema({
 
 const musicianSchema = new mongoose.Schema({
     name: String,
-    phone: Number,
-    email: String,
+    phone: {type: Number, unique: true},
+    email: {type: String, unique: true},
     image: String,
     gender: {type: String, enum: ['Male', 'Female', 'Other']},
     instruments: [instrumentSchema],
@@ -17,7 +17,7 @@ const musicianSchema = new mongoose.Schema({
         latitude: String,
         longitude: String,
     },
-},{unique: true}, {
+}, {
     timestamps: {
         createdAt: 'created_at',
         updatedAt: 'updated_at',

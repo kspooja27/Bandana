@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const _ = require('lodash');
 const passwordHash = require("password-hash");
 const fileUpload = require('express-fileupload');
+const session = require('express-session')
 require('dotenv').config();
 
 const mongoURL = process.env.MONGODB_URI_DEV;
@@ -15,6 +16,13 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 const app = express();
 
+app.use(session({
+    secret: 'fdgsxcgfjkglkjgfdhgcvbn',
+    // resave: false,
+    // saveUninitialized: true,
+    // cookie: { secure: true },
+}))
+
 app.set('view engine', 'ejs');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
@@ -25,7 +33,11 @@ app.use(express.static(__dirname + "/public"));
 
 
 app.get('/', function (req, res) {
-    res.render('landing-page');
+    if(!req.session.userId){
+        res.render('landing-page');
+    } else {
+        res.redirect('/feed');
+    }
 });
 
 app.use('/', require('./routes/root.route'));

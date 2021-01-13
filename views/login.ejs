@@ -3,6 +3,11 @@
 <div class="container">
     <div class="login-form mt-5 mb-5" style="max-width: 500px; margin: auto;">
         <h3>LogIn to Bandana</h3>
+        <% if (typeof alert != 'undefined') { %>
+            <div class="alert text-center text-danger">
+                <%- alert %>
+            </div>
+        <% } %>
         <form action="/user/login" method="post" enctype="multipart/form-data">
             <div class="mb-3">
                 <label for="username" class="form-label">Username</label>

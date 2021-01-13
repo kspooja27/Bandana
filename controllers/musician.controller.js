@@ -11,12 +11,15 @@ exports.register = (req, res) => {
     });
     musician.save((err, savedMusician) => {
         if (err) {
-            console.log(err),
-            res.status(500).json({
-                code: 500,
-                message: "Internal Server Error",
-                error: err,
-            });
+            if (err.code == 11000) {
+                console.log(err);
+                res.render('register', {alert: 'Phone/Email already registered. Proceed to <a href="/login">login</a>.'})
+            }
+            else {
+                console.log(err);
+                res.render('register', {alert: 'Internal Server Error! Try again later.'})
+
+            }
         } else {
             if (req.body.instruments) {
                 let instruments = [];
@@ -33,11 +36,7 @@ exports.register = (req, res) => {
                 savedMusician.save((err) => {
                     if (err) {
                         console.log(err);
-                        res.status(500).json({
-                            code: 500,
-                            message: "Internal Server Error",
-                            error: err,
-                        });
+                        res.render('register', {alert: 'Internal Server Error! Try again later.'})
                     }
                 })
             }
@@ -57,14 +56,9 @@ exports.register = (req, res) => {
 
                 savedMusician.image = filePath;
                 savedMusician.save((err, savedImage) => {
-                    res.status(200).json({
-                        code: 200,
-                        message: "User saved successfully",
-                        user: savedImage,
-                    });
+                    res.redirect('/login');
                 })
             }
-
         }
     });
 
@@ -74,29 +68,22 @@ exports.login = (req, res) => {
     const password = req.body.password;
     Musician.findOne(isNaN(req.body.username) ? {email: req.body.username} : {phone: req.body.username}, (err, musicianResult) => {
             if (err) {
-                res.status(500).json({
-                    code: 500,
-                    message: "Internal Server Error",
-                });
+                console.log(err);
+                res.render('login', {alert: 'Internal Server Error! Try again later.'})
+
             } else {
                 if (musicianResult) {
                     if (passwordHash.verify(password,musicianResult.password)) {
-                        res.status(200).json({
-                            code: 200,
-                            message: "User verified, all OK",
-                            user: musicianResult,
-                        });
+                        req.session.userId = musicianResult.id;
+                        console.log(req.session);
+                        res.redirect('/feed');
+
                     } else {
-                        res.status(401).json({
-                            code: 401,
-                            message: "Authentication error"
-                        });
+                        res.render('login', {alert: 'Incorrect username or password. Check your credentials!'})
+
                     }
                 } else {
-                    res.status(404).json({
-                        code: 404,
-                        message: "User not found"
-                    });
+                    res.render('login', {alert: 'Incorrect username or password. Check your credentials!'})
                 }
             }
         }

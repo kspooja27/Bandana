@@ -3,6 +3,11 @@
 <div class="container">
     <div class="register-form mt-5 mb-5" style="max-width: 500px; margin:auto;">
         <h3>Join us at Bandana</h3>
+        <% if (typeof alert != 'undefined') { %>
+            <div class="alert text-center text-danger">
+                <%- alert %>
+            </div>
+        <% } %>
         <form action="/user/register" method="post" enctype="multipart/form-data">
             <div class="mb-3">
                 <label for="name" class="form-label">Name</label>
@@ -10,7 +15,8 @@
             </div>
             <div class="mb-3">
                 <label for="phone" class="form-label">Phone</label>
-                <input type="text" class="form-control" id="phone" name="phone" placeholder="Your phone number" required>
+                <input type="text" class="form-control" id="phone" name="phone" placeholder="Your phone number"
+                       required>
             </div>
             <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
@@ -18,7 +24,8 @@
             </div>
             <div class="mb-3">
                 <label for="image" class="form-label">Profile Picture</label>
-                <input type="file" class="form-control-file" id="image" name="image" placeholder="Upload Image" accept="image/*" required>
+                <input type="file" class="form-control-file" id="image" name="image" placeholder="Upload Image"
+                       accept="image/*" required>
             </div>
             <div class="mb-3">
                 <label for="gender" class="form-label">Sex</label><br>
@@ -30,15 +37,18 @@
             </div>
             <div class="mb-3">
                 <label for="password" class="form-label">Password</label>
-                <input type="password" class="form-control" id="password" name="password" placeholder="Create your password" required>
+                <input type="password" class="form-control" id="password" name="password"
+                       placeholder="Create your password" required>
             </div>
             <div class="mb-3">
                 <label for="confirm-password" class="form-label">Confirm Password</label>
-                <input type="password" class="form-control" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required>
+                <input type="password" class="form-control" id="confirm-password" name="confirm-password"
+                       placeholder="Confirm your password" required>
                 <div class="password-alert"></div>
             </div>
             <div class="mb-3">
-                <label style="font-weight: normal;" for="existing-user">Already have an account? <a href="/login">LogIn</a> </label>
+                <label style="font-weight: normal;" for="existing-user">Already have an account? <a
+                            href="/login">LogIn</a> </label>
             </div>
             <div class="mb-3 register-button text-center">
                 <button type="submit" class="button-black" disabled>Submit</button>
