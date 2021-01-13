@@ -1,0 +1,28 @@
+<%- include('partials/header') %>
+
+<div class="container">
+    <div class="login-form mt-5 mb-5" style="max-width: 500px; margin: auto;">
+        <h3>LogIn to Bandana</h3>
+        <form action="/user/login" method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" class="form-control" id="username" name="username" placeholder="Email Id / Phone number" required>
+            </div>
+            <div class=" mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" required>
+            </div>
+            <div class="mb-3">
+                <label style="font-weight: normal;" for="new-user">Do not have an account? <a href="/join">Join us</a> </label>
+            </div>
+            <div class="mb-3 login-button text-center">
+                <button type="submit" class="button-black" >Submit</button>
+            </div>
+        </form>
+    </div>
+
+</div>
+
+
+
+<%- include('partials/footer') %>

@@ -17,7 +17,7 @@ const musicianSchema = new mongoose.Schema({
         latitude: String,
         longitude: String,
     },
-}, {
+},{unique: true}, {
     timestamps: {
         createdAt: 'created_at',
         updatedAt: 'updated_at',
