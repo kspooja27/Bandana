@@ -9,10 +9,13 @@
 
     <!--    Fonts-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Lalezar&family=Open+Sans:wght@400;700&family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lalezar&family=Open+Sans:wght@400;700&family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700&display=swap"
+          rel="stylesheet">
 
     <script src="https://use.fontawesome.com/5b505fc5de.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
 
 </head>
 <body>
@@ -34,10 +37,22 @@
                 <a class="nav-link" href="/contact">Contact</a>
             </li>
         </ul>
+        <% if (!Session.userId) { %>
+            <ul class="navbar-nav ml-0">
+                <li class="nav-item">
+                    <a class="nav-link login-btn" href="/login">Login</a>
+                </li>
+            </ul>
+        <% } else {%>
+            <ul class="navbar-nav ml-0">
+                <li class="nav-item">
+                    <a class="nav-link login-btn" href="/logout">Logout</a>
+                </li>
+            </ul>
+        <% } %>
 
     </div>
 </nav>
-
 
 </body>
 </html>

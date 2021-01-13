@@ -21,26 +21,6 @@ exports.register = (req, res) => {
 
             }
         } else {
-            if (req.body.instruments) {
-                let instruments = [];
-                console.log(JSON.stringify(savedMusician))
-                req.body.instruments.split('*,').forEach((instrument) => {
-                    let jsonInst = JSON.parse(instrument)
-                    console.log(jsonInst);
-                    instruments.push(jsonInst);
-                });
-                console.log(instruments);
-
-                savedMusician.instruments = instruments;
-
-                savedMusician.save((err) => {
-                    if (err) {
-                        console.log(err);
-                        res.render('register', {alert: 'Internal Server Error! Try again later.'})
-                    }
-                })
-            }
-
             if(req.files) {
                 let file = req.files.image;
                 let fileName = file.name;

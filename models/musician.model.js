@@ -1,17 +1,11 @@
 const mongoose = require("mongoose");
 
-const instrumentSchema = new mongoose.Schema({
-   name: String,
-   category: String,
-});
-
 const musicianSchema = new mongoose.Schema({
     name: String,
     phone: {type: Number, unique: true},
     email: {type: String, unique: true},
     image: String,
     gender: {type: String, enum: ['Male', 'Female', 'Other']},
-    instruments: [instrumentSchema],
     password: String,
     location: {
         latitude: String,

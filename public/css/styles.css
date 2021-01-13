@@ -14,7 +14,8 @@ label {
 input[type="text"], input[type="email"], input[type="password"], input[type="number"], select {
     border: 1px solid #3d3d3d !important;
     border-radius: 0 !important;
-    height: calc(2.25rem + 2px); !important;
+    height: calc(2.25rem + 2px);
+!important;
 }
 
 
@@ -67,7 +68,19 @@ input[type="text"], input[type="email"], input[type="password"], input[type="num
     cursor: pointer;
 }
 
-.button-black:disabled{
+.button-black:disabled {
     background: #6a6a6a;
     cursor: not-allowed;
+}
+
+.login-btn {
+    color: #e03f59 !important;
+    border: solid 1px #e03f59;
+    padding: 5px 15px;
+}
+
+.login-btn:hover {
+    /*background: #e03f59;*/
+    color: white !important;
+    border-color: white;
 }

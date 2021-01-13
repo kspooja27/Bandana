@@ -31,6 +31,10 @@ app.use(bodyParser.urlencoded({
 app.use(fileUpload());
 app.use(express.static(__dirname + "/public"));
 
+app.use((req, res, next) => {
+    res.locals.Session = req.session;
+    next();
+})
 
 app.get('/', function (req, res) {
     if(!req.session.userId){
