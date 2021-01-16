@@ -292,3 +292,7 @@ p {
 .img-sm+.img-push {
     margin-left: 40px
 }
+.post-image {
+    width: 400px;
+    height: 300px;
+}

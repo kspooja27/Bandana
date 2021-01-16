@@ -1,3 +1,5 @@
+const Post = require('../models/posts.model');
+
 
 exports.register = (req, res) => {
     if (!req.session.userId) {
@@ -21,7 +23,11 @@ exports.feed = (req, res) => {
         res.redirect('/login');
     } else {
         // TODO: Add all functionalities
-        res.render('feed');
+        Post.find({},(err, foundPosts) => {
+            console.log(foundPosts);
+            res.render("feed", {postItems: foundPosts });
+        }).populate('postedBy').populate('comments.postedBy');
+
         //res.send("User is logged in.")
     }
 }
