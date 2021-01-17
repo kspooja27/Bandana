@@ -19,6 +19,10 @@ input[type="text"], input[type="email"], input[type="password"], input[type="num
 !important;
 }
 
+textarea {
+    border: black solid 0.5px !important;
+}
+
 
 .hero {
     background: url("/img/hero-bg.jpg");
@@ -152,3 +156,11 @@ input[type="text"], input[type="email"], input[type="password"], input[type="num
     border-radius: 100px;
     border: solid 5px black;
 }
+
+.post-button {
+    color: #e03f59 !important;
+    border: solid 1px #e03f59 !important;
+    padding: 5px 15px !important;
+    background-color: white !important;
+}
+

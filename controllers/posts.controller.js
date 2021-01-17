@@ -1,11 +1,15 @@
 const Post = require('../models/posts.model');
+// const Musician = require('../models/musician.model');
 const Common = require('./common');
 
+
+
 exports.add = (req, res) => {
+
     let post = new Post({
         title: req.body.title,
         content: req.body.content,
-        postedBy: req.body.postedBy,
+        postedBy: req.session.userId,
     });
     post.save((err, savedPost) => {
         if (err) {
@@ -26,11 +30,12 @@ exports.add = (req, res) => {
 
                 savedPost.image = filePath;
                 savedPost.save((err, savedPostPost) => {
-                    res.status(200).json({
-                        code: 200,
-                        message: "Post saved successfully to the postSchema",
-                        post: savedPostPost,
-                    });
+                    // res.status(200).json({
+                    //     code: 200,
+                    //     message: "Post saved successfully to the postSchema",
+                    //     post: savedPostPost,
+                    // });
+                    res.redirect('/feed');
                 })
 
             }
@@ -59,7 +64,6 @@ exports.addComment = (req, res) => {
                 if (err) Common.error500(err, res);
                 else {
                     res.redirect('/feed');
-                    // res.redirect('/posts/' + savedPost.id);
                 }
             });
         }

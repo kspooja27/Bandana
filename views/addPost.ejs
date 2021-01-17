@@ -1,0 +1,25 @@
+<%- include('partials/header') %>
+<form action="/posts/add" method="post" enctype="multipart/form-data">
+    <div class="post-form mt-5 mb-5" style="max-width: 500px; margin: auto;">
+        <div class="mb-3">
+            <h3>Add Post</h3>
+        </div>
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" class="form-control" id="title" name="title" placeholder="Add title" >
+        </div>
+        <div class="mb-3">
+            <label for="content" class="form-label">Description</label>
+            <textarea name="content" id="content" cols="30" rows="5" class="form-control" placeholder="Add description" required></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="image" class="form-label">Image</label>
+            <input type="file" class="form-control-file" id="image" name="image" placeholder="Upload Image" accept="image/*" >
+        </div>
+        <div class="mb-3 text-center">
+            <button type="submit" class=" button-black" >Submit</button>
+        </div>
+    </div>
+</form>
+
+<%- include('partials/footer') %>

@@ -7,4 +7,5 @@ router.post('/add-comment/:postId', postsController.addComment)
 router.all('/fetch', postsController.fetchAll);
 router.post('/fileTest', postsController.fileTest);
 
+
 module.exports = router;

@@ -50,6 +50,14 @@ exports.profile = (req,res) => {
     })
 }
 
+exports.addPost = (req, res) => {
+    if(!req.session.userId) {
+        res.redirect('/login');
+    } else {
+        res.render("addPost");
+    }
+}
+
 exports.logout = (req, res) => {
     req.session.destroy();
     res.redirect('/login');
