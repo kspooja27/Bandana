@@ -43,9 +43,10 @@ exports.addComment = (req, res) => {
     Post.findById(req.params.postId, (err, post) => {
         if (err) Common.error500(err, res);
         else {
+            console.log(post);
             let newComment = {
                 text: req.body.comment,
-                postedBy: req.body.postedBy,
+                postedBy: req.session.userId,
             };
             if (!post.comments) {
                 let comments = [];
@@ -57,11 +58,8 @@ exports.addComment = (req, res) => {
             post.save((err, savedPost) => {
                 if (err) Common.error500(err, res);
                 else {
-                    res.json({
-                        code: 200,
-                        message: "Comment added successfully",
-                        post: savedPost,
-                    })
+                    res.redirect('/feed');
+                    // res.redirect('/posts/' + savedPost.id);
                 }
             });
         }

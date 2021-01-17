@@ -6,5 +6,6 @@ router.post('/register', musicianController.register);
 router.post('/login', musicianController.login);
 router.post('/fetch', musicianController.fetchAll);
 
+
 module.exports = router;
 

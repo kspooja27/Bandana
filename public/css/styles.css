@@ -1,5 +1,6 @@
 body {
     font-family: "Open Sans" !important;
+    /*height: 100vh !important;*/
 }
 
 h3 {
@@ -55,7 +56,22 @@ input[type="text"], input[type="email"], input[type="password"], input[type="num
     background: black;
     color: white;
     text-align: center;
-    padding: 15px 0;
+    padding: 40px 0 40px 0 ;
+    /*height: 100px;*/
+    /*position: fixed;*/
+    /*bottom: 0;*/
+    /*width: 100%;*/
+}
+.footer h4 {
+    margin-right: 20px;
+}
+.footer p {
+    display: inline;
+    margin-right: 20px;
+}
+.footer h6 {
+    margin-bottom: 0px;
+    margin-top: 40px;
 }
 
 
@@ -83,4 +99,56 @@ input[type="text"], input[type="email"], input[type="password"], input[type="num
     /*background: #e03f59;*/
     color: white !important;
     border-color: white;
+}
+
+
+.custom-btn {
+    padding: 5px 15px;
+}
+
+.custom-btn:hover {
+    /*background: #e03f59;*/
+    color: black !important;
+    border-color: black;
+}
+
+.call-btn {
+    border: solid 1px cornflowerblue;
+    color: cornflowerblue !important;
+}
+
+.email-btn {
+    border: solid 1px darkseagreen;
+    color: darkseagreen !important;
+}
+
+/*.flex-wrapper {*/
+/*    !*display: flex;*!*/
+/*    min-height: 100vh;*/
+/*    bottom: 0;*/
+/*    flex-direction: column;*/
+/*    justify-content: space-between*/
+/*}*/
+
+.comment-button {
+    /*margin-left: -20%;*/
+    color: white;
+    /*display: inline-block;*/
+    background-color: black;
+    border-radius: 50px;
+    border: none;
+    padding: 5px !important;
+    height: 2rem;
+    width: 2rem;
+}
+
+.user-info {
+    padding: 50px;
+}
+
+.profile-picture {
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+    border: solid 5px black;
 }

@@ -55,6 +55,10 @@ body {
     position: relative
 }
 
+/*.user-block {*/
+/*    background-color:;*/
+/*}*/
+
 .user-block img {
     width: 40px;
     height: 40px;
@@ -275,7 +279,7 @@ p {
 .box-body:after,
 .box-footer:after {
     content: "";
-    display: table
+    display: table;
 }
 
 .img-sm,

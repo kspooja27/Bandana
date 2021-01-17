@@ -1,0 +1,39 @@
+<%- include('partials/header') %>
+
+<div class="container">
+
+    <div class="user-info text-center">
+        <img src="/<%=user.image%>" class="profile-picture mb-3">
+        <!--    name, email id , phone -->
+        <h3 class="mb-3"><%= user.name%></h3>
+
+        <a href="tel:+91<%= user.phone %>" class="custom-btn call-btn"> Call </a> &nbsp;&nbsp;
+        <a href="mailto:<%= user.email %>" class="custom-btn email-btn"> Email </a>
+    </div>
+
+    <hr style="max-width: 600px">
+
+
+
+    <link rel="stylesheet" href="/css/feed.css">
+
+    <div class="page-content page-container" id="page-content">
+        <div class="padding">
+            <div class="col-md-6 m-auto">
+                <center>
+                    <h4>Your Posts</h4>
+                </center>
+               <% if(postItems.length == 0) { %>
+                    <center style="color: grey;">You haven't posted anything yet!</center>
+                <% } else { %>
+                    <%- include('partials/posts') %>
+                <% } %>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<%- include('partials/footer') %>
