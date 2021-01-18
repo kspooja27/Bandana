@@ -6,6 +6,6 @@ router.post('/add', postsController.add);
 router.post('/add-comment/:postId', postsController.addComment)
 router.all('/fetch', postsController.fetchAll);
 router.post('/fileTest', postsController.fileTest);
-
+router.get('/delete/:postId',postsController.delete);
 
 module.exports = router;

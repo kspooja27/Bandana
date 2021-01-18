@@ -3,13 +3,23 @@
 
         <div class="box-header with-border">
             <div class="user-block">
+                <div class="row">
+                    <div class="col-10">
+                        <img class="img-circle" src="/<%= post.postedBy.image %>" alt="User Image">
 
-                <img class="img-circle" src="/<%= post.postedBy.image %>" alt="User Image">
-
-                <span class="username"><a href="/profile/<%= post.postedBy.id %>" data-abc="true"><%= post.postedBy.name %></a></span>
-                <span class="description">
+                        <span class="username"><a href="/profile/<%= post.postedBy.id %>"
+                                                  data-abc="true"><%= post.postedBy.name %></a></span>
+                        <span class="description">
                                 <script>document.write(moment("<%= post.created_at %>").fromNow())</script>
                             </span>
+                    </div>
+                    <div class="col-2 text-right">
+                        <% if (post.postedBy.id == Session.userId) { %>
+                            <a href="/posts/delete/<%=post.id%>" class="delete-post" ><i class="fa fa-trash"></i></a>
+<!--                            <span class="delete"><i class="fa fa-trash"></i></span>-->
+                        <% } %>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="box-body">

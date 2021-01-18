@@ -35,7 +35,9 @@ exports.add = (req, res) => {
                     //     message: "Post saved successfully to the postSchema",
                     //     post: savedPostPost,
                     // });
-                    res.redirect('/feed');
+                    // res.redirect('/feed');
+                    res.redirect('/profile/'+req.session.userId);
+
                 })
 
             }
@@ -63,11 +65,21 @@ exports.addComment = (req, res) => {
             post.save((err, savedPost) => {
                 if (err) Common.error500(err, res);
                 else {
+
                     res.redirect('/feed');
                 }
             });
         }
     })
+}
+
+exports.delete= (req, res) => {
+    Post.findByIdAndDelete(req.params.postId, (err, deletedPost ) => {
+        if (err) Common.error500(err, res);
+        else {
+            res.redirect('/profile/'+req.session.userId);
+        }
+    });
 }
 
 exports.fetchAll = (req, res) => {

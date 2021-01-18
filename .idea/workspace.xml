@@ -1,20 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6ff68a7b-fda8-4cb9-92fb-f1903013ce1a" name="Default Changelist" comment="feat: add profile and comment">
-      <change afterPath="$PROJECT_DIR$/public/uploads/posts/60049dc318b23f4944e42f63.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/posts/60049e014722854f708b0eac.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/posts/6004a2c50fa0ff12f0db873f.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/addPost.ejs" afterDir="false" />
+    <list default="true" id="6ff68a7b-fda8-4cb9-92fb-f1903013ce1a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/uploads/posts/60051045c27b956de00e0bea.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/posts/6005a2ead4d05a4728d98cb4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/posts/6005a306d4d05a4728d98cb5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/posts/6005a3a3fdce79334c9741ae.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/posts/6005a414bf81be56d4aa26f4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/posts/6005a45eae2c3f3394b5497f.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/posts/6005a4cef1eae41098b15fef.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/posts/6005a520088dc622685270ab.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/posts/6005a6a58da7632360e91b5a.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/posts/6005a86cb761c415880d397e.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/posts/6005a8efb761c415880d3980.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/users/60050fcfc27b956de00e0be9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/users/60054dbece6f496e3879d216.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/posts.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/posts.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/root.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/root.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/feed.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/feed.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/posts.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/posts.routes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/root.route.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/root.route.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/feed.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/feed.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/partials/header.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/partials/header.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/login.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/login.ejs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/partials/posts.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/partials/posts.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/register.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/register.ejs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +86,8 @@
       <workItem from="1610425978214" duration="8001000" />
       <workItem from="1610486790282" duration="8829000" />
       <workItem from="1610526002501" duration="2592000" />
-      <workItem from="1610696477046" duration="37953000" />
+      <workItem from="1610696477046" duration="41709000" />
+      <workItem from="1610962554358" duration="5742000" />
     </task>
     <task id="LOCAL-00001" summary="Added fileupload">
       <created>1609315931794</created>
@@ -122,7 +131,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610908508726</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="feat: addPost ejs and integrate add API">
+      <created>1610917554540</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1610917554540</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -136,13 +152,14 @@
     <MESSAGE value="feat: add ejs for /feed, add styling for feed, add session" />
     <MESSAGE value="feat: add dynamic rendering in feed.ejs" />
     <MESSAGE value="feat: add profile and comment" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add profile and comment" />
+    <MESSAGE value="feat: addPost ejs and integrate add API" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: addPost ejs and integrate add API" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="393" y="0" key="CommitChangelistDialog2" timestamp="1610910640530">
+    <state x="393" y="0" key="CommitChangelistDialog2" timestamp="1610917552405">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="393" y="0" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1440.860@0.0.1536.824" timestamp="1610910640530" />
+    <state x="393" y="0" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1440.860@0.0.1536.824" timestamp="1610917552405" />
     <state x="393" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1610520448851" />
     <state width="1515" height="210" key="GridCell.Tab.0.bottom" timestamp="1608707683494">
       <screen x="0" y="0" width="1536" height="824" />
@@ -164,10 +181,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1608707674699" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1610910634997">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1610917556363">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.1440.860@0.0.1536.824" timestamp="1610910634997" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.1440.860@0.0.1536.824" timestamp="1610917556363" />
     <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1610520459247" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1610191554788">
       <screen x="0" y="0" width="1536" height="824" />

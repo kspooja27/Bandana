@@ -11,16 +11,14 @@
         <form action="/user/register" method="post" enctype="multipart/form-data">
             <div class="mb-3">
                 <label for="name" class="form-label">Name</label>
-                <input type="text" class="form-control" id="name" name="name" placeholder="Full name" required>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Full name" required autocomplete="off">
             </div>
             <div class="mb-3">
                 <label for="phone" class="form-label">Phone</label>
-                <input type="text" class="form-control" id="phone" name="phone" placeholder="Your phone number"
-                       required>
-            </div>
+                <input type="text" class="form-control" id="phone" name="phone" placeholder="Your phone number" required autocomplete="off">
             <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email" name="email" placeholder="Email Address" required>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Email Address" required autocomplete="off">
             </div>
             <div class="mb-3">
                 <label for="image" class="form-label">Profile Picture</label>

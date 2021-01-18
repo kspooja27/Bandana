@@ -80,7 +80,7 @@ body {
 
 .user-block .username,
 .user-block .description,
-.user-block .comment {
+.user-block .comment{
     display: block;
     margin-left: 50px
 }

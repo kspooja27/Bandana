@@ -9,4 +9,5 @@ router.get('/logout',rootController.logout);
 router.get('/profile/:userId',rootController.profile);
 router.get('/addPost',rootController.addPost);
 
+
 module.exports = router;
