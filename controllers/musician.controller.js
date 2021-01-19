@@ -55,6 +55,7 @@ exports.login = (req, res) => {
                 if (musicianResult) {
                     if (passwordHash.verify(password,musicianResult.password)) {
                         req.session.userId = musicianResult.id;
+                        req.session.userName = musicianResult.name;
                         req.session.userImagePath= musicianResult.image;
                         console.log(req.session.userImagePath);
                         res.redirect('/feed');
