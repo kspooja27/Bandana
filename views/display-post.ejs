@@ -1,0 +1,109 @@
+<%- include('partials/header') %>
+<link rel="stylesheet" href="/css/feed.css">
+
+
+<div class="page-content page-container" id="page-content">
+    <div class="padding">
+        <div class="col-md-6 m-auto">
+            <!-- Modal -->
+            <div class="modal fade" id="modal-<%= post.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                 aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Delete</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            Are you sure you want to delete the post?
+                            <hr>
+                            <p>
+                                <%= post.title %>
+                            </p>
+                            <sub><%= post.content%></sub>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                            <a href="/posts/delete/<%= post.id %>">
+                                <button type="button" class="btn btn-primary">Delete</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box box-widget">
+
+                <div class="box-header with-border">
+                    <div class="user-block">
+                        <div class="row">
+                            <div class="col-10">
+                                <img class="img-circle display-post" src="/<%= post.postedBy.image %>" alt="User Image">
+
+                                <span class="username"><a href="/profile/<%= post.postedBy.id %>"
+                                                          data-abc="true"><%= post.postedBy.name %></a></span>
+                                <span class="description">
+                                <script>document.write(moment("<%= post.created_at %>").fromNow())</script>
+                            </span>
+                            </div>
+                            <div class="col-2 text-right">
+                                <% if (post.postedBy.id == Session.userId) { %>
+                                    <button type="button" class="btn  delete-post" data-toggle="modal"
+                                            data-target="#modal-<%= post.id %>"><i class="fa fa-trash"></i></button>
+                                    <!--                            <a href="/posts/delete/" class="delete-post" ></a>-->
+                                <% } %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="box-body">
+                    <p><%= post.title %></p>
+                    <p><%= post.content %></p>
+                    <% if(post.image){ %>
+                        <img class="img-responsive pad post-image m-auto" src="/<%= post.image %>" alt="Photo" style="max-width: 90%;">
+                    <% } %>
+
+                    <span class="pull-right text-muted"><%= post.comments.length %> comments</span>
+                </div>
+
+                <% post.comments.forEach((comment) => { %>
+                    <div class="box-footer box-comments">
+                        <div class="box-comment">
+                            <img class="img-circle img-sm" src="/<%= comment.postedBy.image %>" alt="User Image">
+                            <div class="comment-text">
+                                <span class="username"><%= comment.postedBy.name %><span
+                                            class="text-muted pull-right">
+                                        <script>document.write(moment("<%= comment.created_at %>").fromNow())</script>
+                                    </span> </span> <%= comment.text %>
+                            </div>
+                        </div>
+                    </div>
+                <% }); %>
+                <div class="box-footer">
+                    <form action="/posts/add-comment/<%= post.id %>" method="post"
+                          enctype="multipart/form-data">
+                        <img class="img-responsive img-circle img-sm" src="/<%= Session.userImagePath %>" alt="Alt Text">
+                        <div class="img-push">
+                            <input type="text" class="form-control input-sm" id="comment" name="comment"
+                                   placeholder="Press enter to post comment" required>
+                        </div>
+                        <div class="comment-button-wrapper w-100 text-right invisible"
+                             style="margin-top: 3px; padding-right: 3px;">
+                            <button class="comment-button" type="submit" hidden><i class="fa fa-paper-plane"></i>
+                            </button>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+<%- include('partials/footer') %>

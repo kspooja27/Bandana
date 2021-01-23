@@ -72,6 +72,37 @@ exports.login = (req, res) => {
     )
 };
 
+exports.changePassword = (req,res) => {
+    res.render('changePassword');
+}
+
+exports.changePasswordPost = (req, res) => {
+    Musician.findById(req.session.userId, (err, user) => {
+        if (err) Common.error500(err, res);
+        else {
+           if (passwordHash.verify(req.body.oldPassword, user.password)) {
+               if (req.body.newPassword == req.body.confirmPassword) {
+                   user.password = passwordHash.generate(req.body.newPassword);
+                   user.save((err, savedPassword) =>{
+                       if(err){
+                           console.log(err);
+                       }
+                   });
+                   // redirect.
+                   res.redirect('/feed');
+               }
+               else {
+                   //Passwords dont match.
+                   res.render('changePassword', {alert:'The passwords do not match, re-enter the credentials.'})
+               }
+           } else {
+               // Old password invalid
+               res.render('changePassword', {alert:'The current passwords is invalid, re-enter the password.'})
+           }
+        }
+    });
+}
+
 exports.fetchAll = (req, res) => {
     Musician.find({}, (err, musicians) => {
         if (err) {}

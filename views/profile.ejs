@@ -12,8 +12,8 @@
                 <p><%= user.phone %></p>
                 <p><%= user.email %></p>
             </div>
-            <a href="/users/update" class="custom-btn call-btn"> Update Profile </a> &nbsp;&nbsp;
-            <a href="/users/reset" class="custom-btn reset-btn"> Change Password </a>
+            <a href="#" class="custom-btn call-btn"> Update Profile </a> &nbsp;&nbsp;
+            <a href="/user/changePassword" class="custom-btn reset-btn"> Change Password </a>
 
         <% } else { %>
             <a href="tel:+91<%= user.phone %>" class="custom-btn call-btn"> Call </a> &nbsp;&nbsp;

@@ -38,7 +38,7 @@
             <div class="user-block">
                 <div class="row">
                     <div class="col-10">
-                        <img class="img-circle" src="/<%= post.postedBy.image %>" alt="User Image">
+                        <img class="img-circle display-post" src="/<%= post.postedBy.image %>" alt="User Image">
 
                         <span class="username"><a href="/profile/<%= post.postedBy.id %>"
                                                   data-abc="true"><%= post.postedBy.name %></a></span>
@@ -60,7 +60,16 @@
             <p><%= post.title %></p>
             <p><%= post.content %></p>
             <% if(post.image){ %>
-                <img class="img-responsive pad post-image m-auto" src="/<%= post.image %>" alt="Photo" style="max-width: 90%;">
+<!--            onClick to display-post-->
+                <a href="/posts/<%= post.id %>">
+                    <img class="img-responsive pad post-image m-auto" src="/<%= post.image %>" alt="Photo" style="max-width: 90%;">
+                </a>
+            <% } else {%>
+               <div class="text-right">
+                   <a href="/posts/<%= post.id %>">
+                       View full post
+                   </a>
+               </div>
             <% } %>
 
             <span class="pull-right text-muted"><%= post.comments.length %> comments</span>

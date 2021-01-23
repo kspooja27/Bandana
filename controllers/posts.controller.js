@@ -3,7 +3,6 @@ const Post = require('../models/posts.model');
 const Common = require('./common');
 
 
-
 exports.add = (req, res) => {
 
     let post = new Post({
@@ -36,7 +35,7 @@ exports.add = (req, res) => {
                     //     post: savedPostPost,
                     // });
                     // res.redirect('/feed');
-                    res.redirect('/profile/'+req.session.userId);
+                    res.redirect('/profile/' + req.session.userId);
 
                 })
 
@@ -73,14 +72,24 @@ exports.addComment = (req, res) => {
     })
 }
 
-exports.delete= (req, res) => {
-    Post.findByIdAndDelete(req.params.postId, (err, deletedPost ) => {
+exports.delete = (req, res) => {
+    Post.findByIdAndDelete(req.params.postId, (err, deletedPost) => {
         if (err) Common.error500(err, res);
         else {
-            res.redirect('/profile/'+req.session.userId);
+            res.redirect('/profile/' + req.session.userId);
         }
     });
 }
+
+exports.displayPost = (req, res) => {
+    Post.findById(req.params.postId, (err, foundPost) => {
+        if (err) Common.error500(err, res);
+        else {
+            res.render('display-post', {post: foundPost});
+        }
+    }).populate('postedBy').populate('comments.postedBy');
+}
+
 
 exports.fetchAll = (req, res) => {
     Post.find({}, (err, posts) => {
