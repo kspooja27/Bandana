@@ -70,7 +70,7 @@ textarea {
     /*height: 100px;*/
     /*position: fixed;*/
     /*bottom: 0;*/
-    /*width: 100%;*/
+    width: 100% !important;
 }
 .footer h4 {
     margin-right: 20px;
